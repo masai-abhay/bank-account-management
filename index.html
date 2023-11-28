@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    function createbankaccount (accountnumber , name , type , balance ){
+
+        this.accountnumber = accountnumber;
+        this.name = name;
+        this.type = type;
+        this.balance = balance;
+                                    
+        /*adding money function*/
+        this.deposite = function(amount){
+            this.balance += amount;
+        }
+
+         /*wirhdrow money*/
+         this.withDrow = function(amount){
+            if(amount<= this.balance){
+                this.balance -= amount
+                console.log("sucessfully withdrow", amount)
+            }
+            else{
+                console.log("hey you have insufficient balance", this.balnce)
+            }
+         
+         }
+
+         /*total balance*/
+         this.gettotalbalance = function(){
+            console.log("your total balance -", this.balance)
+         }
+
+         this.active = function(){
+            return this.active;
+         }
+    };
+
+
+    let ac1 = new createbankaccount(12345, "abhay", "saving", 500)
+    let ac2 = new createbankaccount(12235, "himanshu", "saving", 600)
+    let ac3 = new createbankaccount(12575, "bhumit", "saving", 800)
+    let ac4 = new createbankaccount(12925, "luckey", "saving", 900)
+    let ac5 = new createbankaccount(43925, "luckeyiii", "saving", 900)
+      
+
+    console.log(ac1 , ac2, ac3, ac4, ac5)
+    ac1.deposite(100)
+    ac1.withDrow(300)
+
+    ac2.deposite(200)
+    ac2.withDrow(100)
+
+    ac3.deposite(400)
+    ac3.withDrow(200)
+
+    ac4.deposite(400)
+    ac4.withDrow(200)
+
+    ac5.deposite(300)
+    ac5.withDrow(100)
+
+
+    if (ac1.active()) {
+    console.log(" The ac1 account is active.");
+} else {
+    console.log("The account is not active.");
+}
+
+
+
+if (ac2.active()) {
+    console.log(" The ac2 account is active.");
+} else {
+    console.log("The account is not active.");
+}
+
+
+
+if (ac3.active()) {
+    console.log(" The ac3 account is active.");
+} else {
+    console.log("The account is not active.");
+}
+
+
+
+if (ac4.active()) {
+    console.log(" The ac4 account is active.");
+} else {
+    console.log("The account is not active.");
+}
+
+
+
+
+if (ac5.active()) {
+    console.log(" The ac5 account is active.");
+} else {
+    console.log("The account is not active.");
+}
+
+    let accounts = [ac1, ac2, ac3, ac4, ac5]
+
+    function gettotalbalance(accounts){
+        let total = 0
+        for(let i = 0 ; i < accounts.length; i++){
+            total += accounts[i].balance
+        }
+        console.log(total)
+        
+    }
+    gettotalbalance(accounts)
+    
+   /* console.log(ac1)*/
+
+   
+   
+   
+
+     /*total balance*/
+     
+</script>
+</html>
